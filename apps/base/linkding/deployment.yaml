@@ -12,7 +12,7 @@ spec:
       labels:
         app: linkding
     spec:
-      contaiers:
+      containers:
         - name: linkding
           image: sissbruecker/linkding:1:31:0
           ports:
