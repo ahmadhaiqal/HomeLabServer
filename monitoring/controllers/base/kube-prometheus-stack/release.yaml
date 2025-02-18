@@ -34,7 +34,7 @@ spec:
         ingressClassName: traefik
         hosts:
           - grafana.amdhql.org
-        tls: []
-        # - secretName: alertmanager-general-tls
-        #   hosts:
-        #   - alertmanager.example.com
+        tls: 
+          - secretName: grafana-tls-secret
+            hosts:
+              - grafana.amdhql.org
