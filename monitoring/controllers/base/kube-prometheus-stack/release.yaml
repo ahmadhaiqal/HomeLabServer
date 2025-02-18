@@ -27,4 +27,14 @@ spec:
           kind: PrometheusRule
   values:
     grafana:
-      adminPassword: amdhql
+      adminPassword: amdhql 
+      ingress:
+        enabled: true
+        
+        ingressClassName: traefik
+        hosts:
+          - grafana.amdhql.org
+        tls: []
+        # - secretName: alertmanager-general-tls
+        #   hosts:
+        #   - alertmanager.example.com
