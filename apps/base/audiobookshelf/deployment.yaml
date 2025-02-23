@@ -27,11 +27,11 @@ spec:
               protocol: TCP
 
           volumeMounts:
-            - mountPaht: /config
+            - mountPath: /config
               name: audiobookshelf-config
-            - mountPaht: /metadata
+            - mountPath: /metadata
               name: audiobookshelf-metadata
-            - mountPaht: /audiobooks
+            - mountPath: /audiobooks
               name: audiobookshelf-audiobooks
 
       restartPolicy: Always
