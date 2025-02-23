@@ -26,7 +26,26 @@ spec:
             - containerPort: 3005
               protocol: TCP
 
+          volumeMounts:
+            - mountPaht: /config
+              name: audiobookshelf-config
+            - mountPaht: /metadata
+              name: audiobookshelf-metadata
+            - mountPaht: /audiobooks
+              name: audiobookshelf-audiobooks
+
       restartPolicy: Always
 
+      volumes:
+        - name: audiobookshelf-config
+          persistentVolumeClaim:
+            claimName: audiobookshelf-config
+        - name: audiobookshelf-metadata
+          persistentVolumeClaim:
+            claimName: audiobookshelf-metadata
+        - name: audiobookshelf-audiobooks
+          persistentVolumeClaim:
+            claimName: audiobookshelf-audiobooks
 
-      
+
+
