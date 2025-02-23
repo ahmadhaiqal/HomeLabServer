@@ -14,11 +14,6 @@ spec:
         app: audiobookshelf
     
     spec:
-      securityContext:
-        fsGroup: 33 # www-data group ID
-        runAsUser: 33
-        runAsGroup: 33
-
       containers:
         - name: audiobookshelf
           image: ghcr.io/advplyr/audiobookshelf:2.17.2
@@ -30,9 +25,6 @@ spec:
           ports:
             - containerPort: 3005
               protocol: TCP
-
-          securityContext:
-            allowPrivilegeEscalation: false
 
       restartPolicy: Always
 
