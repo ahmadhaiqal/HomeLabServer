@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: commafeed
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: commafeed
+  template:
+    metadata:
+      labels:
+        app: commafeed
+    spec:
+
+      containers:
+        - name: commafeed
+          image: /commafeed:5.6.0
+          
+          ports:
+            - containerPort: 8082
+              protocol: TCP
+
+
+      restartPolicy: Always
