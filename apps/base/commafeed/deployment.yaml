@@ -26,7 +26,7 @@ spec:
               protocol: TCP
 
           volumeMounts:
-            - name: /commafeed/data
+            - mountPath: /commafeed/data
               name: commafeed-data
        
           securityContext:
