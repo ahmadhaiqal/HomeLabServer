@@ -12,6 +12,13 @@ spec:
       labels:
         app: commafeed
     spec:
+      securityContext:
+        fsGroup: 33 # www-data group ID
+        runAsUser: 33
+        runAsGroup: 33
+ 
+      securityContext:
+            allowPrivilegeEscalation: false
 
       containers:
         - name: commafeed
@@ -21,5 +28,13 @@ spec:
             - containerPort: 8082
               protocol: TCP
 
+          volumeMounts:
+            - name: /commafeed/data
+              name: commafeed-data
+       
+      volumes:
+        - name: commafeed-data
+          persistentVolumeClaim:
+            claimName: commafeed-data
 
       restartPolicy: Always
