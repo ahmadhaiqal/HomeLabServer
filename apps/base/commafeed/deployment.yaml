@@ -17,9 +17,6 @@ spec:
         runAsUser: 33
         runAsGroup: 33
  
-      securityContext:
-            allowPrivilegeEscalation: false
-
       containers:
         - name: commafeed
           image: athou/commafeed:4.5.0
@@ -32,6 +29,10 @@ spec:
             - name: /commafeed/data
               name: commafeed-data
        
+          securityContext:
+              allowPrivilegeEscalation: false
+
+      
       volumes:
         - name: commafeed-data
           persistentVolumeClaim:
