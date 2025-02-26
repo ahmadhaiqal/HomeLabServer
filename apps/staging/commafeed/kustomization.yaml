@@ -3,5 +3,5 @@ kind: Kustomization
 namespace: commafeed
 resources:
   - ../../base/commafeed/
-  #- cloudflare.yaml
-  #- commafeed-cloudflare-secret.yaml
+  - cloudflare.yaml
+  - commafeed-cloudflare-secret.yaml
